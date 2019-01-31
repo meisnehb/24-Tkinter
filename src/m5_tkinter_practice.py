@@ -3,8 +3,8 @@ This project lets you try out Tkinter/Ttk and practice it!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Hannah Meisner.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
 from tkinter import ttk
@@ -12,29 +12,67 @@ from tkinter import ttk
 
 def main():
     """ Constructs a GUI with stuff on it. """
+    root = tkinter.Tk()
+
+    frame = ttk.Frame(root, padding=10, relief='groove')
+    frame.grid()
+
+    entry_box = ttk.Entry(frame)
+    entry_box.grid()
+
+    entry_box2 = ttk.Entry(frame)
+    entry_box2.grid()
+
+    button = ttk.Button(frame, text='Button')
+    button['command'] = (lambda: print('Hello'))
+    button.grid()
+
+    button2 = ttk.Button(frame, text='Button2')
+    button2['command'] = (lambda: entry(entry_box))
+    button2.grid()
+
+    button3 = ttk.Button(frame, text='Button3')
+    button3['command'] = (lambda: entry2(entry_box, entry_box2))
+    button3.grid()
+
+    root.mainloop()
+
+def entry(entry_box):
+    contents = entry_box.get()
+    if contents == 'ok':
+        print('Hello')
+    else:
+        print('Goodbye')
+
+def entry2(entry_box, entry_box2):
+    contents = entry_box.get()
+    n = int(entry_box2.get())
+
+    for k in range(n):
+        print(contents)
     # -------------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # DONE: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # DONE: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # DONE: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # DONE: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -43,7 +81,7 @@ def main():
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -67,7 +105,7 @@ def main():
     ####################################################################
 
     # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # DONE: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
 
 
